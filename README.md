@@ -5,18 +5,18 @@ Works in editor and in build.
 Based on https://github.com/starikcetin/unity-scene-reference  
 
 ## Instalation
-
-Drop **SceneReference.cs** anywhere in your **"Assets"** folder.
+Install as git package,  
+or just drop **SceneReference.cs** anywhere in your **"Assets"** folder.
 
 ## Usage
-
-1. Make a field in your script
+0. Add  ```using Tymski;```
+1. Make a field in your script  
 
 ```Csharp
     public SceneReference scene; 
 ```
 
-2. In inspector, reference your scene 
+2. In inspector, reference your scene  
 ![Scene field](Screenshot.png "Scene field")  
 
 3. Load your scene
