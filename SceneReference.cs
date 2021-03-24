@@ -8,10 +8,9 @@ using UnityEditor.SceneManagement;
 using UnityEditor.VersionControl;
 #endif
 
-// Author: JohannesMP (2018-08-12), 2019 S. Tarık Çetin, Tymski 2020 , MIT license
-//
-// A wrapper that provides the means to safely serialize Scene Asset References.
-//
+
+// Author: JohannesMP (2018-08-12), 2019 S. Tarık Çetin, Tymski, MIT license
+
 // Internally we serialize an Object to the SceneAsset which only exists at editor time.
 // Any time the object is serialized, we store the path provided by this Asset (assuming it was valid).
 //
@@ -173,7 +172,7 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
             return;
         }
         var sceneAssetProperty = GetSceneAssetProperty(property);
-        label.tooltip = "The actual Scene Asset reference.\nOn serialize this is also stored as the asset's path.";
+        // label.tooltip = "The actual Scene Asset reference.\nOn serialize this is also stored as the asset's path.";
         var sceneControlID = GUIUtility.GetControlID(FocusType.Passive);
         EditorGUI.BeginChangeCheck();
         {
@@ -226,7 +225,7 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
         }
 
         // Left status label
-        using(new EditorGUI.DisabledScope(readOnly))
+        using (new EditorGUI.DisabledScope(readOnly))
         {
             var labelRect = DrawUtils.GetLabelRect(position);
             var iconRect = labelRect;
@@ -242,7 +241,7 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
         buttonRect.width = (buttonRect.width) / 3;
 
         var tooltipMsg = "";
-        using(new EditorGUI.DisabledScope(readOnly))
+        using (new EditorGUI.DisabledScope(readOnly))
         {
             // NOT in build settings
             if (buildScene.buildIndex == -1)
